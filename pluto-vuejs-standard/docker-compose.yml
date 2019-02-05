@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  web:
+    build: .docker/server
+    ports:
+    - "8901:80"
+    volumes:
+    - ./dist:/var/www/html
+    environment:
+      restart: unless-stopped
